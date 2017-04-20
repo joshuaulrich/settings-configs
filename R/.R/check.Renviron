@@ -1,0 +1,5 @@
+#R_LIBS=/home/josh/R/library-dev:/home/josh/R/library
+#R_LIBS_SITE=/usr/lib/R/site-library
+#_R_CHECK_CRAN_INCOMING_=FALSE
+#_R_CHECK_CODETOOLS_PROFILE_="suppressLocalUnused=FALSE"
+

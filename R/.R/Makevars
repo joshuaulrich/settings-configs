@@ -1,0 +1,2 @@
+#CC=gcc -std=gnu99 -fsanitize=undefined,address -fno-omit-frame-pointer
+CC=gcc -std=gnu99 -fno-omit-frame-pointer
