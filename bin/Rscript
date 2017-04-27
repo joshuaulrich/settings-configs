@@ -1,2 +1,3 @@
 #!/bin/bash
-R_LIBS_USER='/home/josh/R/library' /usr/bin/Rscript "$@"
+R_LIBS_USER="/home/${USER}/R/library" \
+  /usr/bin/Rscript "$@"

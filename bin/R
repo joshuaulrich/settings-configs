@@ -1,2 +1,9 @@
 #!/bin/bash
-R_LIBS_USER='/home/josh/R/library' /usr/bin/R "$@" --no-save
+if [[ $@ == CMD* ]];
+then
+  R_LIBS_USER="/home/${USER}/R/library" \
+    /usr/bin/R "$@"
+else
+  R_LIBS_USER="/home/${USER}/R/library" \
+    /usr/bin/R "$@" --no-save --quiet
+fi

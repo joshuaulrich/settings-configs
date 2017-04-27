@@ -1,2 +1,0 @@
-#!/bin/bash
-R_LIBS_USER='/home/josh/R/library-dev:/home/josh/R/library' /usr/bin/Rscript "$@"
