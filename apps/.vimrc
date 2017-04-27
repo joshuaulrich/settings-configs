@@ -13,8 +13,12 @@ set complete+=kspell
 set dictionary+=/usr/share/dict/american-english
 
 set wrap nows ai ic scs linebreak display+=lastline,uhex tabstop=4 softtabstop=2 shiftwidth=2 expandtab nobackup
-colorscheme pablo
-colorscheme default
+
+" southernlights colorscheme
+" mkdir -p ~/.vim/colors
+" wget https://raw.githubusercontent.com/jalvesaq/southernlights/master/colors/southernlights.vim -O ~/.vim/colors/southernlights.vim
+colorscheme southernlights
+
 map <down> gj
 map <up> gk
 imap <down> <esc>lgji
