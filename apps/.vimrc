@@ -25,6 +25,8 @@ imap <down> <esc>lgji
 imap <up> <esc>lgki
 
 " Pathogen
+" mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+" curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
