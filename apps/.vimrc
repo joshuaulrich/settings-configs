@@ -55,7 +55,3 @@ endif
 
 " Markdown syntax highlighting
 au BufRead,BufNewFile *.md set filetype=markdown
-
-" Pathogen
-execute pathogen#infect()
-
