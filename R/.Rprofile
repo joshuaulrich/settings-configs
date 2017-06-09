@@ -30,4 +30,7 @@ local({
   options(repos = repos,
           prompt = "R> ",
           useFancyQuotes = FALSE)
+
+  if (interactive())
+    message(R.version$version.string)
 })
