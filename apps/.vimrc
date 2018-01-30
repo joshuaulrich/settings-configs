@@ -2,7 +2,10 @@ set nomodeline
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 
-set guioptions-=T
+set guioptions-=T " No toolbar
+set guioptions-=m " No menu bar
+set guioptions-=r " No right scroll bar
+
 set foldmethod=marker
 
 set undodir=~/.vim/undo
