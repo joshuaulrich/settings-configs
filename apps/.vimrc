@@ -18,7 +18,7 @@ set spell spelllang=en_us
 set complete+=kspell
 set dictionary+=/usr/share/dict/american-english
 
-set wrap nows ai ic scs linebreak display+=lastline,uhex tabstop=4 softtabstop=2 shiftwidth=2 expandtab nobackup
+set wrap nows ai ic scs linebreak display+=lastline,uhex tabstop=8 softtabstop=2 shiftwidth=2 expandtab nobackup
 
 " southernlights colorscheme
 " mkdir -p ~/.vim/colors
