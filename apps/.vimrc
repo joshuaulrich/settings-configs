@@ -8,7 +8,10 @@ set guioptions-=r " No right scroll bar
 
 set foldmethod=marker
 
+" Put undo files here, so they don't clutter working directory
 set undodir=~/.vim/undo
+" Ensure undo directory exists
+silent !mkdir ~/.vim/undo > /dev/null 2>&1
 
 set spell
 set spell spelllang=en_us
