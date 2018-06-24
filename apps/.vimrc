@@ -61,3 +61,10 @@ endif
 
 " Markdown syntax highlighting
 au BufRead,BufNewFile *.md set filetype=markdown
+" Pandoc code block folding
+let g:pandoc#folding#fold_fenced_codeclocks = 1
+
+" https://makandracards.com/makandra/11541-how-to-not-leave-trailing-whitespace-using-your-editor-or-git
+" Show trailing white pace and spaces before a tab:
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
