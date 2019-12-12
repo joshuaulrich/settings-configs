@@ -2,6 +2,8 @@
 #alias R='R_LIBS_USER=/home/josh/R/library /usr/bin/R --no-save'
 alias Rscript='R_LIBS_USER=/home/josh/R/library /usr/bin/Rscript'
 #alias Rd='R_LIBS_USER='\''/home/josh/R/library-dev:/home/josh/R/library'\'' /usr/bin/R --no-save'
+alias rm='echo "\`rm\` is disabled because I am tired of trying to recover files
+use \`trash\` instead"'
 alias cd2='cd ../..'
 alias Rdevel='~/R/R-build/bin/R'
 alias xts-rforge='cd ~/R/packages/xts/pkg'
