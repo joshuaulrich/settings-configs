@@ -2,23 +2,18 @@
 
 # remove snap file systems from df output, unless --snap option is present
 
-while [ -n "$1" ]; do
-    case $1 in
-        --snap)
-          snap="SET"
-          break
-          ;;
-    esac
-    shift
+# https://unix.stackexchange.com/a/258514
+# remove the --snap option, so it isn't passed to df
+for arg do
+  shift
+  if [ "$arg" = "--snap" ]; then
+    snap="SET"
+    continue
+  fi
+  set -- "$@" "$arg"
 done
 
-# https://unix.stackexchange.com/a/258514
 if [ -n "$snap" ]; then
-  for arg do
-    shift
-    [ "$arg" = "--snap" ] && continue
-    set -- "$@" "$arg"
-  done
   /bin/df $@
 else
   /bin/df $@ | grep -v "snap"
