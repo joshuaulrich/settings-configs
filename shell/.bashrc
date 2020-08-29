@@ -66,12 +66,12 @@ fi
 
 if [ "$color_prompt" = yes ]; then
 #    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\> '
-    PS1="\n\[\033[38;5;6m\]\u@\h:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;3m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]\n>\[$(tput sgr0)\] "
+    PS1="\n\[\033[38;5;6m\]\u@\h:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;3m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]\n\$\[$(tput sgr0)\] "
 else
 #    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 #    PS1='\n\[\033]0;\h: ${PWD}\007\033[0;36m\]\h: \[\033[0;33m${PWD}\033[0m\]\n> '
     # http://bashrcgenerator.com/
-    PS1="\n\[\033[38;5;6m\]\u@\h:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;3m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]${MY_GIT_PS1}\n>\[$(tput sgr0)\] "
+    PS1="\n\[\033[38;5;6m\]\u@\h:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;3m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]${MY_GIT_PS1}\n\$\[$(tput sgr0)\] "
 fi
 unset color_prompt force_color_prompt
 
