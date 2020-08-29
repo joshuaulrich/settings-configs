@@ -28,7 +28,7 @@ local({
   # set options
 #  options(defaultPackages = c(old, "Defaults"), repos = repos)
   options(repos = repos,
-          prompt = "R> ",
+          prompt = "R$ ",
           useFancyQuotes = FALSE)
 
   if (interactive())
