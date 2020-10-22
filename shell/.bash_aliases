@@ -18,4 +18,4 @@ alias lspm-rforge='cd ~/R/packages/lspm'
 alias lspm='cd ~/git/LSPM'
 alias quantmod-rforge='cd ~/R/packages/quantmod'
 alias quantmod='cd ~/git/quantmod'
-
+alias radian='/home/josh/.local/bin/radian'
