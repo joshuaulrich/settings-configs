@@ -84,6 +84,9 @@ options(radian.stderr_format = "\033[0;31m{}\033[0m")
 # all modes:      app$session$modes$r$key_bindings
 # debug mode:     app$session$modes$browse$prompt_key_bindings
 #
+# You can use `names(<external_ptr>)` to see the list of exported attributes.
+# For example `names(prompt_toolkit)`
+#
 options(radian.on_load_hooks = list(function() {
     getOption("rchitect.py_tools")$attach()
 
@@ -95,7 +98,8 @@ options(radian.on_load_hooks = list(function() {
 
     insert_mode <- radian$key_bindings$insert_mode
     app <- radian$get_app()
-    #kb <- app$session$modes$r$prompt_key_bindings
+    app$session$app$timeoutlen <- 0.2
+
     kb <- app$session$modes$r$key_bindings
 
     kb$add("j", "k", filter = insert_mode)(function(event) {
@@ -105,5 +109,12 @@ options(radian.on_load_hooks = list(function() {
         event$app$key_processor$feed(KeyPress("|"))
         event$app$key_processor$feed(KeyPress(">"))
         event$app$key_processor$feed(KeyPress(" "))
+    })
+
+    kb$add(Keys$Enter, Keys$Enter, filter = insert_mode)(function(event) {
+        is_multiline <- event$app$current_buffer$multiline()
+        if (is_multiline) {
+            event$current_buffer$newline()
+        }
     })
 }))
