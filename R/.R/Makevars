@@ -1,2 +1,12 @@
+#ccache
+VER=
+CCACHE=ccache
+CC=$(CCACHE) gcc$(VER)
+CXX=$(CCACHE) g++$(VER)
+CXX11=$(CCACHE) g++$(VER)
+CXX14=$(CCACHE) g++$(VER)
+FC=$(CCACHE) gfortran$(VER)
+F77=$(CCACHE) gfortran$(VER)
+
 #CC=gcc -std=gnu99 -fsanitize=undefined,address -fno-omit-frame-pointer
 CC=gcc -std=gnu99 -fno-omit-frame-pointer
