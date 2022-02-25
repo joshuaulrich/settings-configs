@@ -175,6 +175,8 @@ export PKG_CFLAGS='-Wall -pedantic'
 #export JAVA_HOME='/usr/lib/jvm/java-6-sun/jre'
 export LS_COLORS="${LS_COLORS}*.csv=00;32:*.R=01;94:*.sql=00;93:"
 
+export LS_COLORS="${LS_COLORS}*.csv=00;32:*.R=01;94:*.sql=00;93:"
+
 # workaround for gvim bug
 #gvim(){ (setsid /usr/bin/gvim -f "$@" & true) 2> /dev/null; }
 # for vim-r-plugin
