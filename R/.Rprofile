@@ -33,4 +33,13 @@ local({
 
   if (interactive())
     message(R.version$version.string)
+
+  if (require(colorout)) {
+      setOutputColors(normal = 57,
+                      negnum = 160,
+                      zero = 253,
+                      number = 244,
+                      date = 215,
+                      verbose = FALSE)
+  }
 })
