@@ -173,9 +173,15 @@ function svn_file_history() {
 export PKG_FFLAGS='-Wall -pedantic'
 export PKG_CFLAGS='-Wall -pedantic'
 #export JAVA_HOME='/usr/lib/jvm/java-6-sun/jre'
-export LS_COLORS="${LS_COLORS}*.csv=00;32:*.R=01;94:*.sql=00;93:"
 
-export LS_COLORS="${LS_COLORS}*.csv=00;32:*.R=01;94:*.sql=00;93:"
+# pretty terminal colors!
+export LS_COLORS="${LS_COLORS}*.csv=00;38;5;28:"
+export LS_COLORS="${LS_COLORS}*.R=01;38;5;19:"
+export LS_COLORS="${LS_COLORS}*.sql=00;38;5;127:"
+export LS_COLORS="${LS_COLORS}*.py=00;38;5;226:"
+export LS_COLORS="${LS_COLORS}*.pdf=00;38;5;250;48;5;52:"
+export LS_COLORS="${LS_COLORS}*.txt=00;38;5;250;48;5;22:"
+export LS_COLORS="${LS_COLORS}*.log=00;38;5;250;48;5;22:"
 
 # workaround for gvim bug
 #gvim(){ (setsid /usr/bin/gvim -f "$@" & true) 2> /dev/null; }
