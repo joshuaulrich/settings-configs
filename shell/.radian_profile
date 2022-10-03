@@ -98,7 +98,6 @@ options(radian.on_load_hooks = list(function() {
 
     insert_mode <- radian$key_bindings$insert_mode
     app <- radian$get_app()
-    app$session$app$timeoutlen <- 0.2
 
     kb <- app$session$modes$r$key_bindings
 
