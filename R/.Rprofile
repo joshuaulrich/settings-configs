@@ -30,7 +30,10 @@ local({
   options(repos = repos,
           prompt = "R$ ",
           getSymbols.warning4.0 = FALSE,
-          useFancyQuotes = FALSE)
+          useFancyQuotes = FALSE,
+          warnPartialMatchArgs = TRUE,
+          warnPartialMatchAttr = TRUE,
+          warnPartialMatchDollar = TRUE)
 
   if (interactive())
     message(R.version$version.string)
