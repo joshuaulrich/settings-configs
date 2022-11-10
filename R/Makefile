@@ -32,7 +32,7 @@ UNIT_TEST_FILES = $(wildcard ${PKG_PATH}/inst/tinytest/test-*.R)
 
 BENCHMARK_FILE = ${PKG_PATH}/inst/benchmarks/benchmark.subset.R
 
-.PHONY: build install check tests docs test clean
+.PHONY: docs build install check tests test clean
 
 all: check #benchmark
 
@@ -41,6 +41,7 @@ print:
 	@echo 'path: $(PKG_PATH) \
 	inst_file: $(PKG_INST_FILE) \
 	tar.gz: $(PKG_TARGZ)'
+
 
 # Build package
 build: $(PKG_TARGZ)
@@ -59,7 +60,9 @@ check: docs build
 
 docs: ${PKG_R_FILES}
 	@${R_HOME}/bin/Rscript -e "roxygen2::roxygenize(roclets='rd')" \
-	  && sed -i '/^RoxygenNote/d' ${PKG_PATH}/DESCRIPTION
+	  && sed -i '/^RoxygenNote/d' ${PKG_PATH}/DESCRIPTION \
+	  && /bin/rm ${PKG_PATH}/src/*.o \
+	  && /bin/rm ${PKG_PATH}/src/*.so
 
 # Build for CRAN
 #build-cran: $(PKG_TARGZ)
@@ -101,4 +104,4 @@ html: $(HTML_FILES)
 	R --slave -e "set.seed(100);rmarkdown::render('$<')"
 
 clean:
-	$(RM) $(HTML_FILES)
+	$(RM) $(HTML_FILES) ${PKG_PATH}/src/*.o ${PKG_PATH}/src/*.so
