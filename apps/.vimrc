@@ -1,3 +1,6 @@
+" https://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim?rq=1
+" sudo apt install vim-gtk3
+
 set nomodeline
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
@@ -38,6 +41,7 @@ syntax on
 filetype plugin indent on
 
 " split navigation
+" resize splits: https://vi.stackexchange.com/questions/16984/
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
