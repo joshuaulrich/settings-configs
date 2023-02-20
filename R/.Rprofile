@@ -30,6 +30,7 @@ local({
   options(repos = repos,
           prompt = "R$ ",
           getSymbols.warning4.0 = FALSE,
+          java.parameters = c("-Xmx8g"),
           useFancyQuotes = FALSE,
           warnPartialMatchArgs = TRUE,
           warnPartialMatchAttr = TRUE,
