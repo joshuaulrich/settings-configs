@@ -100,6 +100,11 @@ endif
 
 " Markdown syntax highlighting
 au BufRead,BufNewFile *.md set filetype=markdown
+" https://github.com/preservim/vim-markdown (clone into ~/.vim/bundle)
+let g:vim_markdown_fenced_languages = ['r', 'html', 'python', 'bash=sh']
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_conceal = 0
+
 " Pandoc code block folding
 let g:pandoc#folding#fold_fenced_codeclocks = 1
 
