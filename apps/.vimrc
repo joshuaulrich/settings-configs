@@ -82,7 +82,9 @@ let R_hl_term = 0
 let R_args = []  " if you had set any
 let R_bracketed_paste = 1
 
-" vim-pandoc
+" vim-pandoc (clone these into ~/.vim/bundle)
+" https://github.com/vim-pandoc/vim-pandoc
+" https://github.com/vim-pandoc/vim-pandoc-syntax
 let vim_pandoc_syntax_exists = 1
 
 " For DataCamp exercise files
@@ -109,6 +111,7 @@ let g:vim_markdown_conceal = 0
 let g:pandoc#folding#fold_fenced_codeclocks = 1
 
 " better whitespace
+" https://github.com/ntpeters/vim-better-whitespace (clone into ~/.vim/bundle)
 let better_whitespace_skip_empty_lines=1
 let better_whitespace_skip_comment_lines=1
 let strip_only_modified_lines=1
