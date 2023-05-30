@@ -176,7 +176,7 @@ export PKG_CFLAGS='-Wall -pedantic'
 
 # pretty terminal colors!
 export LS_COLORS="${LS_COLORS}*.csv=00;38;5;28:"
-export LS_COLORS="${LS_COLORS}*.R=01;38;5;19:"
+export LS_COLORS="${LS_COLORS}*.R=01;38;5;39:"
 export LS_COLORS="${LS_COLORS}*.sql=00;38;5;127:"
 export LS_COLORS="${LS_COLORS}*.py=00;38;5;226:"
 export LS_COLORS="${LS_COLORS}*.pdf=00;38;5;250;48;5;52:"
