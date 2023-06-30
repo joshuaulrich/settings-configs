@@ -1,0 +1,13 @@
+# ssh to machine A via machine B
+
+# machine with public ssh port
+Host external
+    HostName ff.com
+    Port X2Y
+    User abc
+
+Host ryzen
+    HostName 192.168.X.X
+    User xyz
+    Port 22
+    ProxyJump external
