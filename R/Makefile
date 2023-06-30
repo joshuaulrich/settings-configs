@@ -60,8 +60,8 @@ check: docs build
 docs: ${PKG_R_FILES}
 	@${R_HOME}/bin/Rscript -e "roxygen2::roxygenize(roclets='rd')" \
 	  && sed -i '/^RoxygenNote/d' ${PKG_PATH}/DESCRIPTION \
-	  && /bin/rm ${PKG_PATH}/src/*.o \
-	  && /bin/rm ${PKG_PATH}/src/*.so
+	  && /bin/rm --force ${PKG_PATH}/src/*.o \
+	  && /bin/rm --force ${PKG_PATH}/src/*.so
 
 # Check for CRAN
 cran:
@@ -94,4 +94,4 @@ html: $(HTML_FILES)
 	R --slave -e "set.seed(100);rmarkdown::render('$<')"
 
 clean:
-	$(RM) $(HTML_FILES) ${PKG_PATH}/src/*.o ${PKG_PATH}/src/*.so
+	/bin/rm --force $(HTML_FILES) ${PKG_PATH}/src/*.o ${PKG_PATH}/src/*.so
