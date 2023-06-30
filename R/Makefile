@@ -42,7 +42,6 @@ print:
 	inst_file: $(PKG_INST_FILE) \
 	tar.gz: $(PKG_TARGZ)'
 
-
 # Build package
 build: $(PKG_TARGZ)
 $(PKG_TARGZ): $(PKG_ALL_FILES) $(UNIT_TEST_FILES) $(UNIT_TEST_SUITE)
@@ -64,19 +63,10 @@ docs: ${PKG_R_FILES}
 	  && /bin/rm ${PKG_PATH}/src/*.o \
 	  && /bin/rm ${PKG_PATH}/src/*.so
 
-# Build for CRAN
-#build-cran: $(PKG_TARGZ)
-#$(PKG_TARGZ): $(PKG_ALL_FILES) $(UNIT_TEST_FILES) $(UNIT_TEST_SUITE)
-#	@${R_HOME}/bin/R CMD build ${PKG_BUILD_OPTS} ${PKG_PATH}
-#
-## Install package for CRAN
-#install-cran: build-cran $(PKG_INST_FILE)
-#$(PKG_INST_FILE): $(PKG_TARGZ)
-#	@${R_HOME}/bin/R CMD INSTALL ${PKG_TARGZ}
-#
-## Run R CMD check for CRAN
-#check-cran: install-cran
-#	${R_HOME}/bin/R CMD check ${PKG_TARGZ}
+# Check for CRAN
+cran:
+	@${R_HOME}/bin/R CMD build ${PKG_PATH} && \
+	_R_CHECK_CRAN_INCOMING_=false ${R_HOME}/bin/R CMD check ${PKG_TARGZ} --as-cran
 
 # Run unit test suite
 tests: install ${UNIT_TEST_FILES}
