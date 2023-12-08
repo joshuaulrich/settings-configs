@@ -110,7 +110,8 @@ options(radian.on_load_hooks = list(function() {
         event$app$key_processor$feed(KeyPress(" "))
     })
 
-    kb$add(Keys$Enter, Keys$Enter, filter = insert_mode)(function(event) {
+    # Use Alt-Enter to add a new line (terminal sees Alt as a leading escape)
+    kb$add(Keys$Escape, Keys$Enter, filter = insert_mode)(function(event) {
         is_multiline <- event$app$current_buffer$multiline()
         if (is_multiline) {
             event$current_buffer$newline()
