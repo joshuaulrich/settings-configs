@@ -1,0 +1,17 @@
+LICENSE
+WISHLIST
+^.*\.Rcheck$
+^.*\.tar.gz$
+^.*\.patch$
+^.*\.notes$
+^.*\.orig$
+^.*\.sw.
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.git
+^\.gitignore
+\.Rmd$
+^CRAN_comments.md$
+^release-checklist.md$
+.travis.yml
+Makefile
