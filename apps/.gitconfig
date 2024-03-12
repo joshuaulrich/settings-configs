@@ -7,5 +7,10 @@
         rebase = true
 [alias]
         logone = log --decorate --graph --all --oneline
+        lo = log --decorate --graph --all --oneline
         logfuller = log --decorate --graph --format=fuller
+        lf = log --decorate --graph --format=fuller
         logdiff = log --decorate --graph -p
+        ld = log --decorate --graph -p
+        st = status
+        co = checkout
