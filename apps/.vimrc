@@ -20,8 +20,17 @@ set undodir=~/.vim/undo
 silent !mkdir ~/.vim/undo > /dev/null 2>&1
 
 " Spelling
-set spell
-set spell spelllang=en_us
+set nospell
+augroup mdSpell
+    autocmd!
+    autocmd FileType markdown setlocal spell spelllang=en_us
+    autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+augroup END
+augroup txtSpell
+    autocmd!
+    autocmd FileType text setlocal spell spelllang=en_us
+    autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
+augroup END
 set complete+=kspell
 set dictionary+=/usr/share/dict/american-english
 
