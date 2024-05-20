@@ -123,17 +123,17 @@ let R_bracketed_paste = 1
 let vim_pandoc_syntax_exists = 1
 
 " For DataCamp exercise files
-runtime plugin/highlights.vim
-if !exists(':Highlight')
-  echo "Sorry some initializations will be ignored as Highlight is nowhere to be found"
-else
-  Highlight 4 \*\*\* =hint
-  Highlight 5 \*\*\* =solution
-  Highlight 4 \*\*\* =instructions
-  Highlight 7 VideoExercise
-  Highlight 8 NormalExercise
-  Highlight 9 MultipleChoiceExercise
-endif
+"runtime plugin/highlights.vim
+"if !exists(':Highlight')
+"  echo "Sorry some initializations will be ignored as Highlight is nowhere to be found"
+"else
+"  Highlight 4 \*\*\* =hint
+"  Highlight 5 \*\*\* =solution
+"  Highlight 4 \*\*\* =instructions
+"  Highlight 7 VideoExercise
+"  Highlight 8 NormalExercise
+"  Highlight 9 MultipleChoiceExercise
+"endif
 
 " Markdown syntax highlighting
 au BufRead,BufNewFile *.md set filetype=markdown
