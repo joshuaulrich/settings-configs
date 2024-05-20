@@ -19,6 +19,14 @@ set undodir=~/.vim/undo
 " Ensure undo directory exists
 silent !mkdir ~/.vim/undo > /dev/null 2>&1
 
+" copy to Shift+Ins
+vmap <S-y> "+y
+" copy to middle-click
+"vmap <S-y> "*y
+"vmap <C-x> "*d
+"vmap <C-v> c<ESC>"*p
+"imap <C-v> <ESC>"*pa
+
 " Spelling
 set nospell
 augroup mdSpell
