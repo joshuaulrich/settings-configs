@@ -121,6 +121,8 @@ nnoremap <C-H> <C-W><C-H>
 
 " Map jk to Esc
 imap jk <Esc>
+imap << <-
+imap >> \|>
 
 " vim built-in R syntax
 let r_indent_align_args = 1
