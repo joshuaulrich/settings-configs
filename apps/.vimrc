@@ -46,7 +46,7 @@ set wrap           " Break lines at window width
 set linebreak      " Don't split words across lines
 "set showbreak=\|_\ " String to put at the start of wrapped lines
 set autoindent     " Copy indent from current line when starting a new line
-set shiftwidth=2   " Number of spaces to use for each step of (auto)indent
+set shiftwidth=4   " Number of spaces to use for each step of (auto)indent
 
 set nowrapscan     " Searches wrap around the end of the file
 set ignorecase     " Ignore case in patterns
@@ -56,6 +56,9 @@ set tabstop=8      " # of spaces a <Tab> in the file counts for
 set softtabstop=2  " # of spaces a <Tab> counts for while editing
 set expandtab      " Use the appropriate number of spaces to insert a <Tab>
 set display+=lastline,uhex
+
+" resize splits and highlight copy
+set mouse=n
 
 " southernlights colorscheme
 " mkdir -p ~/.vim/colors
