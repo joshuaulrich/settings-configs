@@ -16,6 +16,7 @@ set foldlevelstart=10
 set nobackup      " No backup file (*.ext~)
 " Put undo files here, so they don't clutter working directory
 set undodir=~/.vim/undo
+set undofile
 " Ensure undo directory exists
 silent !mkdir ~/.vim/undo > /dev/null 2>&1
 
