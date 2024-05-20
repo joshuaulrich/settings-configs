@@ -3,7 +3,7 @@
 
 set nomodeline
 set nocompatible
-source $VIMRUNTIME/vimrc_example.vim
+"source $VIMRUNTIME/vimrc_example.vim
 
 set guioptions-=T " No toolbar
 set guioptions-=m " No menu bar
@@ -56,6 +56,41 @@ imap <up> <esc>lgki
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+" install pathogen plugins via:
+" VIM_PLUGIN='vim-sensible' \
+" PLUGIN_REPO=https://github.com/tpope/${VIM_PLUGIN}.git \
+" && git clone ${PLUGIN_REPO} ~/.vim/bundle/${VIM_PLUGIN}
+
+" ----------------------------------------------------------------------
+" Nvim
+"
+" (other settings in ~/.Rprofile)
+" https://github.com/jamespeapen/Nvim-R/wiki/options#disable-nvim-r-commands
+"let R_external_term = 1 " Run R in an external terminal (or Rgui.exe)
+"let R_external_term = 'xterm' " Run R in in xterm
+let R_app = "/home/josh/.local/bin/radian"
+let R_cmd = "R"
+let R_hl_term = 0
+let R_args = []  " if you had set any
+let R_bracketed_paste = 1
+
+" don't replace "_" with "<-", ever
+let R_assign = 0
+
+" Change Leader and LocalLeader keys:
+let maplocalleader = ','
+"let mapleader = ';'
+
+" Use Ctrl+Space to do omni completion:
+if has('nvim') || has('gui_running')
+    inoremap <C-Space> <C-x><C-o>
+else
+    inoremap <Nul> <C-x><C-o>
+endif
+" Press Space to send lines and selection to R:
+vmap <Space> <Plug>RDSendSelection
+nmap <Space> <Plug>RDSendLine
+" ----------------------------------------------------------------------
 
 " split navigation
 " resize splits: https://vi.stackexchange.com/questions/16984/
