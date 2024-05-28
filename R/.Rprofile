@@ -36,15 +36,21 @@ local({
           warnPartialMatchAttr = TRUE,
           warnPartialMatchDollar = TRUE)
 
-  if (interactive())
+  if (interactive()) {
     message(R.version$version.string)
 
-  if (require(colorout)) {
-      setOutputColors(normal = 57,
-                      negnum = 160,
-                      zero = 253,
-                      number = 244,
-                      date = 215,
-                      verbose = FALSE)
+    #ncolors <- try(as.numeric(system("xterm-color-count.sh", intern = TRUE)), silent = TRUE)
+    ncolors <- 256
+    have_colorout <- requireNamespace("colorout", quietly = TRUE)
+    if (!inherits(ncolors, "try-error") && !is.na(ncolors) && have_colorout) {
+      if (ncolors < 256) {
+        colorout::setOutputColors(verbose = FALSE)
+      } else {
+        setColOut <- colorout::setOutputColors256
+        setColOut(warn = c(1, 0, 208),
+                  error = c(1, 0, 9),
+                  verbose = FALSE)
+      }
+    }
   }
 })
