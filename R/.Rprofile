@@ -36,6 +36,14 @@ local({
           warnPartialMatchAttr = TRUE,
           warnPartialMatchDollar = TRUE)
 
+  conflictRules("dplyr", exclude = "lag")
+
+  # bspm
+  if (requireNamespace("bspm", quietly = TRUE)) {
+      suppressMessages(bspm::enable())
+      options(bspm.version.check = FALSE)
+  }
+
   if (interactive()) {
     message(R.version$version.string)
 
