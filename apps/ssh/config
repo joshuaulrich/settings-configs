@@ -11,3 +11,7 @@ Host ryzen
     User xyz
     Port 22
     ProxyJump external
+
+Host rsync.net
+    HostName de3682.rsync.net
+    User de3682
