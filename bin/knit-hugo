@@ -1,0 +1,5 @@
+#!/bin/sh
+
+Rscript -e 'rmarkdown::render("index.Rmd", rmarkdown::md_document(preserve_yaml = TRUE, pandoc_args = c("--to=markdown_strict+all_symbols_escapable+backtick_code_blocks+fenced_code_blocks+space_in_atx_header+intraword_underscores+lists_without_preceding_blankline+shortcut_reference_links+pipe_tables+strikeout+autolink_bare_uris+task_lists+definition_lists+footnotes+smart+tex_math_dollars", "--wrap=none")), "index.md")'
+
+#Rscript -e 'rmarkdown::render("index.Rmd", rmarkdown::md_document(preserve_yaml = TRUE, pandoc_args = c("--to=markdown_strict+all_symbols_escapable+backtick_code_blocks+fenced_code_blocks+space_in_atx_header+intraword_underscores+lists_without_preceding_blankline+shortcut_reference_links+pipe_tables+strikeout+autolink_bare_uris+task_lists+definition_lists+footnotes+smart+tex_math_dollars")), "index.md")'
